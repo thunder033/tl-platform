@@ -43,3 +43,6 @@ jspm_packages
 *.tar
 .tmp
 songs/
+
+**/*.js
+**/*.js.map
