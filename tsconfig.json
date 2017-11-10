@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2016",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "sourceMap": true,
+    "outFile": "build.js"
+  },
+  "include": [
+    "server.ts",
+    "gulpclass.ts"
+  ]
+}
