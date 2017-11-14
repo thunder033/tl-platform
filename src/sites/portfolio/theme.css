@@ -1,0 +1,9 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 1em;
+}
+
+.heading {
+    color: #f00;
+    font-weight: bold;
+}

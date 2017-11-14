@@ -1,4 +1,5 @@
 {
   "name": "portfolio",
-  "host": "gregrozmarynowycz.com"
+  "host": "gregrozmarynowycz.com",
+  "dependencyTreePath": "app/adt.js"
 }
