@@ -5,10 +5,13 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "sourceMap": true,
-    "outFile": "build.js"
+    "baseUrl": ".",
+    "paths": {
+      "lib/*": ["./src/lib/*"]
+    }
   },
   "include": [
     "server.ts",
-    "gulpclass.ts"
+    "gulpfile.ts"
   ]
 }

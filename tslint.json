@@ -21,7 +21,7 @@
     "no-default-export": true,
     "no-empty-interface": true,
     "no-string-throw": true,
-    "prefer-const": true,
+    "prefer-const": [true, {"destructuring": "all"}],
     "no-bitwise": false,
     "quotemark": [true, "single", "avoid-escape"],
     "no-console": [true, "log", "debug"],
