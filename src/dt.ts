@@ -6,6 +6,9 @@ const DT = {
         site: '',
     },
     core: {
+        data: {
+            templates: '',
+        },
         log: '',
         stateMachine: '',
         staticCtrl: '',

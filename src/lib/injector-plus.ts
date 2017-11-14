@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 
 export interface InjectableMethodCtor {
-    new(): InjectableMethod
+    new(): InjectableMethod;
 }
 
 export interface InjectableMethod {
@@ -17,7 +17,7 @@ const annotationKey = Symbol('dependencies');
  * @returns {ParameterDecorator}
  */
 export function inject(identifier: string): ParameterDecorator {
-    return function(target: {(...args): any} | Function, key: string, index: number) {
+    return function annotation(target: {(...args): any} | Function, key: string, index: number) {
         if (key && key !== injectableMethodName) {
             throw new TypeError('Dependencies can only be injected on constructor or injectable method executor');
         } else if (key) {
@@ -27,7 +27,7 @@ export function inject(identifier: string): ParameterDecorator {
         const annotations: string[] = Reflect.getOwnMetadata(annotationKey, target) || new Array(target.length);
         annotations[index] = identifier;
         Reflect.defineMetadata(annotationKey, annotations, target);
-    }
+    };
 }
 
 /**
@@ -57,7 +57,7 @@ export function ngAnnotate(provider: Function | InjectableMethodCtor): Array<str
 
 type DepTree = {
     [key: string]: string | DepTree;
-}
+};
 
 export function buildTree(tree: DepTree, module: string) {
     try {
@@ -72,7 +72,7 @@ export function buildTree(tree: DepTree, module: string) {
             node[prop] = [ ...identifier, prop].join('.');
         } else if (typeof value === 'object' && value !== null) {
             Object.keys(value).forEach((key) => {
-                traverseNode(value, key, [...identifier, prop])
+                traverseNode(value, key, [...identifier, prop]);
             });
         }
     }

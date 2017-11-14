@@ -8,8 +8,6 @@ import * as angular from 'angular';
 class SiteLoader {
     constructor(
         @inject(DT.ng.$stateProvider) private $stateProvider: StateProvider) {
-
-
    }
 }
 
@@ -25,7 +23,7 @@ abstract class Site {
         this.name = params.name;
 
         this.module = angular.module(this.name, [
-            require('tl-platform.module'),
+            require('core/tl-platform.module'),
         ]);
     }
 
