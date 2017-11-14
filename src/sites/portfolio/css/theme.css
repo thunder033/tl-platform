@@ -1,0 +1,111 @@
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 100%;
+    height: 100%;
+    color: #c5daee;
+    background: #111;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+    font-family: "Segoe UI Black", "Arial Black", sans-serif;
+}
+
+h1 {
+    font-size: 2em;
+    line-height: 1.4em;
+}
+
+.heading {
+    color: #f00;
+    font-weight: bold;
+}
+
+.content-block, #experience .category {
+    padding: 1em;
+    background: #232630;
+    background: hsla(224, 17%, 25%, .65);
+    box-sizing: border-box;
+}
+
+p {
+    margin: .75em 0;
+}
+
+@media screen and (min-width: 60em) {
+    main {
+        perspective: 1200px;
+        perspective-origin: 50% 25%;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background-image: linear-gradient(#2d3952, #001);
+    }
+
+    #intro {
+        font-size: 200%;
+        float: left;
+        width: 60%;
+        box-sizing: border-box;
+        height: 190%;
+        position: relative;
+        line-height: 1.2em;
+        box-shadow:  .3em .3em .6em inset;
+        overflow: hidden;
+        transform: translate3d(-3em, -22%, 0) scale(.5) rotateY(20deg) rotateX(-5deg) rotateZ(0deg);
+        text-shadow:
+                -5px -2px 2px #111,
+                -1px 0 0 #ebf0ff,
+                0 -1px 0 #677588,
+                1px 0 0 #35424e;
+        border: 3px solid #8a8a86;
+        border-top-color: #c2c2be;
+        border-left-color: #a0a09c;
+    }
+
+    #intro .content {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+    }
+
+    #intro:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-image: url('assets/images/frosted-glass.jpg');
+        opacity: .5;
+    }
+
+    #portrait {
+        float: left;
+        width: 33%;
+        height: 30em;
+        padding-right: 1em;
+        position: relative;
+    }
+
+    #portrait:after {
+        content: '';
+        display: block;
+        background: #100;
+        width: 100%;
+        height: 100%;
+    }
+
+    #experience {
+        display: flex;
+    }
+
+    #experience .category {
+        flex: 1;
+    }
+
+    #experience #career {
+        flex: 2;
+    }
+}
+

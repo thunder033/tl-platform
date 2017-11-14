@@ -1,44 +1,65 @@
 <main>
-    <h1>Greg Rozmarynowycz</h1>
-    <span class="subtitle">Full Stack Engineer</span>
-    <div class="intro">
-        <p>
-            I am a full stack engineer with combined freelance, project, and professional experience of over 8 years.
-            I have worked on systems ranging from a humble college library catalog,
-            to backend services powering one of the largest e-commerce platforms in the U.S.,
-            to an industrial-grade big-data platform.
-            I strive to apply cutting edge technology to tackle society's most pressing issues.
-        </p><p>
+    <aside id="intro">
+        <div class="content content-block">
+            <div id="portrait"></div>
+            <h1>Greg Rozmarynowycz</h1>
+            <span class="subtitle">Full Stack Engineer</span>
+            <p>
+                I am a full stack engineer with combined freelance, project, and professional experience of over 8 years.
+                I have worked on systems ranging from a humble college library catalog,
+                to backend services powering one of the largest e-commerce platforms in the U.S.,
+                to an industrial-grade big-data platform.
+                I strive to apply cutting edge technology to tackle society's most pressing issues.
+            </p><p>
             Growing up in the Cleveland, OH suburb of Sheffield Village, I dove into web development when I was 10.
             I began freelancing as I entered high school, a gig that propelled me to an accelerated completion of my
             B.S. in Game Design &amp; Development from Rochester Institute of Technology.
         </p>
 
-        <div id="sites">
-            <a href="http://www.linkedin.com/in/gregroz" target="_blank"><img src="assets/images/linkedin.png" alt="Linked In Profile" ></a>
-            <a href="http://blog.thunderlab.net" target="_blank"><img src="assets/images/wp-icon.png" alt="Blog" ></a>
-            <a href="http://thunderkracker.deviantart.com/" target="_blank"><img src="assets/images/da.png" alt="DeviantArt" ></a>
-            <a href="http://stackoverflow.com/users/901891/greg-rozmarynowycz" target="_blank"><img src="assets/images/stackoverflow.png" alt="StackOverflow" ></a>
-            <a href="https://github.com/thunder033" target="_blank"><img src="assets/images/github.png" alt="GitHub"></a>
-        </div>
+            <div id="sites">
+                <a href="http://www.linkedin.com/in/gregroz" target="_blank"><img src="assets/images/linkedin.png" alt="Linked In Profile" ></a>
+                <a href="http://blog.thunderlab.net" target="_blank"><img src="assets/images/wp-icon.png" alt="Blog" ></a>
+                <a href="http://thunderkracker.deviantart.com/" target="_blank"><img src="assets/images/da.png" alt="DeviantArt" ></a>
+                <a href="http://stackoverflow.com/users/901891/greg-rozmarynowycz" target="_blank"><img src="assets/images/stackoverflow.png" alt="StackOverflow" ></a>
+                <a href="https://github.com/thunder033" target="_blank"><img src="assets/images/github.png" alt="GitHub"></a>
+            </div>
 
-        <div id="contact">
-            440-541-7907
+            <div id="contact">
+                440-541-7907
+            </div>
         </div>
-    </div>
+    </aside>
 
-    <h2>Skills</h2>
     <div id="skills">
-
+        <h2>Skills</h2>
+        <span ng-repeat="skill in $ctrl.skillsList" class="skill" ng-bind="skill"></span>
     </div>
 
     <h2>Experience</h2>
-    <ul>
-        <li ng-repeat="entry in $ctrl.entries"><span ng-bind="entry.title"></span></li>
-    </ul>
     <div id="experience">
-        <div class="category">Career</div>
-        <div class="category">Project</div>
-        <div class="category">Freelance</div>
+        <div class="category" id="career">
+            <h3>Career</h3>
+            <ul>
+                <li class="entry" ng-repeat="entry in $ctrl.getExperienceByType('career')">
+                    <span ng-bind="entry.title"></span>
+                </li>
+            </ul>
+        </div>
+        <div class="category" id="project">
+            <h3>Project</h3>
+            <ul>
+                <li class="entry"  ng-repeat="entry in $ctrl.getExperienceByType('project')">
+                    <span ng-bind="entry.title"></span>
+                </li>
+            </ul>
+        </div>
+        <div class="category" id="freelance">
+            <h3>Freelance</h3>
+            <ul>
+                <li class="entry" ng-repeat="entry in $ctrl.getExperienceByType('freelance')">
+                    <span ng-bind="entry.title"></span>
+                </li>
+            </ul>
+        </div>
     </div>
 </main>

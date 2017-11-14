@@ -24,6 +24,14 @@ class PortfolioCtrl implements IController {
             this.skillsList = skillsList;
         });
     }
+
+    public getExperienceByType(type: string) {
+        if (!(this.entries instanceof Array)) {
+            return [];
+        }
+
+        return this.entries.filter((entry: IExperience) => entry.type === type);
+    }
 }
 
 module.exports = ngAnnotate(PortfolioCtrl);
