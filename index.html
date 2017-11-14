@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>TL Platform</title>
+    <title>{{name}}</title>
     <base href="/">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="res/style.min.css">
-    <script src="static/bundle.js"></script>
+    <meta name="description" value="{{description}}">
+    <script src="bundle.js"></script>
 </head>
-<body ng-app="tl-platform">
-    <span>Platform base...</span>
+<body ng-app="{{module}}">
     <div ui-view>Failed to load UI</div>
 </body>
 </html>
