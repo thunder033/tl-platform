@@ -44,7 +44,7 @@ export class Gulpfile implements ITaskRunner {
     @Task('minify-site-css')
     public minifySiteCSS(siteDir: string) {
         const sitePath = path.join(Config.location.sites, siteDir);
-        return gulp.src(`${sitePath}/*.css`)
+        return gulp.src(`${sitePath}/**/*.css`)
             .pipe(sourcemaps.init())
             .pipe(cleanCSS())
             .pipe(concat('style.min.css'))
