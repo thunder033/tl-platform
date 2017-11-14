@@ -52,6 +52,7 @@ export class Logger {
     }
 
     public error(message: string);
+    public error(...args);
     public error(...args) {
         if (this.state.getState() < Level.Error) {
             return;
@@ -61,6 +62,7 @@ export class Logger {
     }
 
     public warn(message: string);
+    public warn(...args);
     public warn(...args) {
         if (this.state.getState() < Level.Warn) {
             return;
@@ -70,6 +72,7 @@ export class Logger {
     }
 
     public info(message: string);
+    public info(...args);
     public info(...args) {
         if (this.state.getState() < Level.Info) {
             return;
@@ -82,6 +85,7 @@ export class Logger {
      * @param {string} message
      */
     public debug(message: string);
+    public debug(...args);
     public debug(...args) {
         if (this.state.getState() < Level.Debug) {
             return;
@@ -91,6 +95,7 @@ export class Logger {
     }
 
     public verbose(message: string);
+    public verbose(...args);
     public verbose(...args) {
         if (this.state.getState() < Level.Verbose) {
             return;
