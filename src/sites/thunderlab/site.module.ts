@@ -3,7 +3,7 @@ import {Ng1StateDeclaration} from '@uirouter/angularjs';
 import {DT} from '@tree';
 
 angular.module('thunderlab', [
-    require('tl-platform.module'),
+    require('core/tl-platform.module'),
 ]).constant(DT.value.states, [
     {
         name: 'index',
